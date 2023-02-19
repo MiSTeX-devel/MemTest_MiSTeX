@@ -212,7 +212,7 @@ always @ (posedge clk) begin
 						addr2   <= addr + 1'd1;
 					end
 				end
-			
+
 			2 : begin
 					addr       <= addr2;
 					cas_addr   <= cas_addr2;
@@ -224,7 +224,7 @@ always @ (posedge clk) begin
 					sdaddr2    <= {1'b1, cas_addr}; // AUTO PRECHARGE
 					cmd2       <= cas_cmd;
 				end
-			
+
 			7: begin
 					if(chip == 0 && sz == 3 && &addr[23:0]) done3 <= 1;
 					if(chip == 1 && sz == 3 && &addr[22:0]) done3 <= 1;

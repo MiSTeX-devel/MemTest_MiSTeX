@@ -142,13 +142,13 @@ always @(posedge clk) begin
 	reg [31:0] rst_cnt;
 
 	if (check_in_progress & dram_ready & (dram_rdat!=rnd_out)) failcount <= failcount + 1;
-	 
+
 	curr_state <= ( reset_req & dram_done ) ? RESET : next_state;
 	if(~rst_n) begin
 		reset_req <= 1;
 		rst_cnt <= 0;
 	end
-	
+
 	if(~rst_n || reset_req) begin
 		check_in_progress <= 0;
 		passcount <= 0;

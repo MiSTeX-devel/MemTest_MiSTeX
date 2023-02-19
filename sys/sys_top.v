@@ -19,9 +19,6 @@
 //
 //============================================================================
 
-`define USE_SDRAM
-`define DEBUG_NOHDMI
-
 module sys_top
 (
 	/////////// CLOCK //////////
@@ -1534,9 +1531,9 @@ emu emu
 	.SDRAM2_EN(SW[3]),
 `endif
 
-`ifndef ARCADE_SYS
 	.BUTTONS(btn),
 	.OSD_STATUS(osd_status),
+`ifndef ARCADE_SYS
 	.SD_SCK(SD_CLK),
 	.SD_MOSI(SD_MOSI),
 	.SD_MISO(SD_MISO),
