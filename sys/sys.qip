@@ -24,7 +24,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE sys/hdmi_config.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sys/mcp23009.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sys/f2sdram_safe_terminator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sys/ddr_svc.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sys/sysmem.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sys/sd_card.sv
 set_global_assignment -name VERILOG_FILE       sys/spi-slave.v
 set_global_assignment -name VERILOG_FILE       sys/spi-master.v

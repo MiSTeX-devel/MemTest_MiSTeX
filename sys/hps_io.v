@@ -40,7 +40,7 @@ module hps_io #(parameter STRLEN=0, PS2DIV=0, WIDE=0, VDNUM=1, PS2WE=0)
 	output reg [31:0] joystick_3,
 	output reg [31:0] joystick_4,
 	output reg [31:0] joystick_5,
-	
+
 	// analog -127..+127, Y: [15:8], X: [7:0]
 	output reg [15:0] joystick_analog_0,
 	output reg [15:0] joystick_analog_1,
