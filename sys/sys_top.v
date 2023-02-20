@@ -775,7 +775,7 @@ pll_hdmi_adj pll_hdmi_adj
 
 wire [63:0] pal_data;
 wire [47:0] pal_d = {pal_data[55:32], pal_data[23:0]};
-wire  [6:0] pal_a = ram2_bcnt[6:0];
+wire  [6:0] pal_a = 0;
 wire        pal_wr;
 
 reg  [28:0] pal_addr;

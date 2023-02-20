@@ -468,7 +468,7 @@ always@(posedge clk_sys) begin : uio_block
 
 				//menu mask
 				'h2E: if(byte_cnt == 1) io_dout <= status_menumask;
-				
+
 				//sdram size set
 				'h31: if(byte_cnt == 1) sdram_sz <= io_din;
 
