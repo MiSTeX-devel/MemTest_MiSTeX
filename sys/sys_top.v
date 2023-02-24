@@ -119,7 +119,7 @@ module sys_top
 	output  [3:0] DEBUG
 );
 
-wire [2:0] PLL_CLOCKS;
+wire [3:0] PLL_CLOCKS;
 
 ALTPLL #(
 	.BANDWIDTH_TYPE("AUTO"),
@@ -135,6 +135,10 @@ ALTPLL #(
 	.CLK2_DUTY_CYCLE(6'd50),
 	.CLK2_MULTIPLY_BY(5'd12),
 	.CLK2_PHASE_SHIFT(1'd0),
+	.CLK3_DIVIDE_BY(4'd12),
+	.CLK3_DUTY_CYCLE(6'd50),
+	.CLK3_MULTIPLY_BY(5'd24),
+	.CLK3_PHASE_SHIFT(1'd0),
 	.COMPENSATE_CLOCK("CLK0"),
 	.INCLK0_INPUT_FREQUENCY(24'd50000),
 	.OPERATION_MODE("NORMAL")
@@ -153,6 +157,7 @@ ALTPLL #(
 wire FPGA_CLK1_50 = PLL_CLOCKS[0];
 wire FPGA_CLK2_50 = PLL_CLOCKS[1];
 wire FPGA_CLK3_50 = PLL_CLOCKS[2];
+wire SPI_CLK_100  = PLL_CLOCKS[3];
 
 //////////////////////  Secondary SD  ///////////////////////////////////
 wire SD_CS, SD_CLK, SD_MOSI;
@@ -297,7 +302,8 @@ hps_interface hps_interface (
 	.osd_enable(HPS_OSD_ENABLE),
 	.io_enable(HPS_IO_ENABLE),
 
-	.clk_sys(clk_sys),
+	.sync_clk(SPI_CLK_100),
+	.sys_clk(clk_sys),
 	.reset(reset_req)
 );
 
