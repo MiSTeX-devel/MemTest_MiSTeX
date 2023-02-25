@@ -2,8 +2,8 @@ module hps_interface
 (
     // HPS interface
     input      [15:0]  gp_in,
-    output reg [31:0]  gp_out,
-    output reg         io_strobe,
+    output     [31:0]  gp_out,
+    output             io_strobe,
 
     // HPS SPI
     input  spi_mosi,
@@ -61,21 +61,14 @@ spi_slave spi_slave (
     .rst(reset)
 );
 
-always @(posedge sys_clk) begin
-    if (reset) begin
-        gp_out    <= 0;
-        io_strobe <= 0;
-    end else begin
-        gp_out <= {
-            11'b0,          // [31:21]
-            io_en,          // [20]
-            osd_en,         // [19]
-            fpga_en,        // [18]
-            2'b0,           // [17:16]
-            gp_word_out     // [15:0]
-        };
-        io_strobe <= spi_rx_strobe;
-    end
-end
+assign gp_out = {
+    11'b0,          // [31:21]
+    io_en,          // [20]
+    osd_en,         // [19]
+    fpga_en,        // [18]
+    2'b0,           // [17:16]
+    gp_word_out     // [15:0]
+};
+assign io_strobe = spi_rx_strobe;
 
 endmodule
