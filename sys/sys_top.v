@@ -116,6 +116,7 @@ module sys_top
 	input 	      HPS_FPGA_ENABLE,
 	input         HPS_OSD_ENABLE,
 	input         HPS_IO_ENABLE,
+	input         HPS_CORE_RESET,
 	output  [3:0] DEBUG
 );
 
