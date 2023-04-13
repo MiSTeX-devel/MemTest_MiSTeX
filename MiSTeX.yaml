@@ -3,16 +3,11 @@ mainfile: InputTest.sv
 use-template-sys: False
 
 defines:
-  MISTER_FB: 1
+  USE_SDRAM: 1
 
 sourcedirs:
   - sys
   - rtl
-  - rtl/jt5205
-  - rtl/JTFRAME
-  - rtl/tv80
-  - rtl/jt49
-  - rtl/jt49/filter
 
 quartus:
   sourcefiles:
