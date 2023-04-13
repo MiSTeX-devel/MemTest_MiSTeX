@@ -194,7 +194,7 @@ assign BUTTONS   = 0;
 wire [31:0] status;
 wire  [1:0] buttons;
 
-`include "build_id.v"
+`include "build_id.vh"
 localparam CONF_STR =
 {
 	"MEMTEST;;",
