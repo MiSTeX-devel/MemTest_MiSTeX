@@ -1,4 +1,4 @@
-mainfile: InputTest.sv
+mainfile: memtest.sv
 
 use-template-sys: False
 
